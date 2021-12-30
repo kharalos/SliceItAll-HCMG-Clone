@@ -137,9 +137,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
-  preloadedAssets:
-  - {fileID: 11400000, guid: 6b3f28d607cd83149aa6f6ff9293d8e6, type: 2}
-  - {fileID: -734853928126175018, guid: 2afdea75b450a1549b93e4bab9065d53, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -157,7 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.KharalosGameStudios.mobilegametemplate
+    Android: com.KharalosGameStudios.SliceUp
     Standalone: com.KharalosGameStudios.mobile-game-template
   buildNumber:
     Standalone: 0
