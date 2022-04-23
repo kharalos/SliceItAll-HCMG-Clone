@@ -11,6 +11,10 @@ public class Handle : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Ground"))
+        {
+            knife.SpinBack();
+        }
         if (other.CompareTag("Sliceable") && !other.GetComponent<SlicedManager>().Sliced)
         {
             knife.SpinBack();

@@ -63,7 +63,7 @@ public class KnifeManager : MonoBehaviour
         rb.isKinematic = false;
         rb.velocity = Vector3.zero;
         rb.AddTorque(Vector3.right * force * spinSpeed * 2, ForceMode.Impulse);
-        rb.AddForce((Vector3.forward + Vector3.up * 4).normalized * force, ForceMode.Impulse);
+        rb.AddForce((Vector3.forward + Vector3.up * 2.5f).normalized * force, ForceMode.Impulse);
         canStuck = false;
         froze = false;
         sm.Play("Spin");
@@ -102,10 +102,11 @@ public class KnifeManager : MonoBehaviour
     }
     public void SpinBack()
     {
+        if (blinking) return;
         rb.isKinematic = false;
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-        rb.AddTorque((Vector3.left + Vector3.up).normalized * force * spinSpeed, ForceMode.Impulse);
+        //rb.AddTorque((Vector3.left + Vector3.up).normalized * force * spinSpeed, ForceMode.Impulse);
         rb.AddForce(-knifeDir * force / 3, ForceMode.Impulse);
         Debug.Log("Spun back.");
 
@@ -118,7 +119,7 @@ public class KnifeManager : MonoBehaviour
     private IEnumerator BlinkHandle()
     {
         blinking = true;
-        spin = false;
+        //spin = false;
         for (float i = 0; i < 1; i += 0.04f)
         {
             handleBlinkRend.material.SetColor("_EmissionColor", new Color(i, i, i));
@@ -133,7 +134,7 @@ public class KnifeManager : MonoBehaviour
         }
         handleBlinkRend.material.SetColor("_EmissionColor", new Color(0, 0, 0));
         handleBlinkRend.material.EnableKeyword("_EMISSION");
-        spin = true;
+        //spin = true;
         blinking = false;
     }
 }
